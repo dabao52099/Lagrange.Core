@@ -5,13 +5,16 @@ using Lagrange.OneBot.Message;
 namespace Lagrange.OneBot.Core.Entity.Message;
 
 [Serializable]
-public class OneBotNode(string userId, string nickName, List<OneBotSegment> content) : SegmentBase
+public class OneBotNode : SegmentBase
 {
-    [JsonPropertyName("user_id")] public int UserId { get; set; } = userId;
+    [JsonPropertyName("user_id")]
+    public int UserId { get; set; }
 
-    [JsonPropertyName("nickname")] public string NickName { get; set; } = nickName;
+    [JsonPropertyName("nickname")]
+    public string NickName { get; set; }
 
-    [JsonPropertyName("content")] public List<OneBotSegment> Content { get; set; } = content;
+    [JsonPropertyName("content")]
+    public List<OneBotSegment> Content { get; set; }
     
     public IMessageEntity ToEntity() => throw new NotImplementedException();
 
