@@ -7,7 +7,7 @@ namespace Lagrange.OneBot.Core.Entity.Message;
 [Serializable]
 public class OneBotNode(uint userId, string nickName, List<OneBotSegment> content) : SegmentBase
 {
-    [JsonPropertyName("user_id")] public string UserId { get; set; } = userId;
+    [JsonPropertyName("user_id")] public uint UserId { get; set; } = userId;
 
     [JsonPropertyName("nickname")] public string NickName { get; set; } = nickName;
 
